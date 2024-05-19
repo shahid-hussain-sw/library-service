@@ -11,15 +11,15 @@ on:
 
 jobs:
  build:
-   runs-on: ubuntu-latest
+   runs-on: ['self-hosted']
    steps:
     - name: checkout code
       uses: actions/checkout@2
     - name: Set up JDK 17
-        uses: actions/setup-java@v3
-        with:
-          distribution: 'temurin'
-          java-version: '17'
+      uses: actions/setup-java@v3
+      with:
+        distribution: 'temurin'
+        java-version: '17'
     - name: Build library service
       run: ./gradlew clean build
 
